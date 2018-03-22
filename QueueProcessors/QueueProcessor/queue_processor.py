@@ -1,21 +1,25 @@
-import stomp
+import base64
+import datetime
+import glob
+import json
 import logging.config
 import smtplib
-import datetime
-import time
+import stomp
 import sys
-import json
-import glob
-import base64
+import time
+import traceback
+
 from base import session
 from orm_mapping import *
-import traceback
-sys.path.append('/home/isisautoreduce/NewQueueProcessing/QueueProcessor/utils')
-from messaging_utils import MessagingUtils
-from instrument_variable_utils import InstrumentVariablesUtils
-from status_utils import StatusUtils
-from reduction_run_utils import ReductionRunUtils
 from settings import ACTIVEMQ, LOGGING, EMAIL_HOST, EMAIL_PORT, EMAIL_ERROR_RECIPIENTS, EMAIL_ERROR_SENDER, BASE_URL
+
+from utils.messaging_utils import MessagingUtils
+from utils.instrument_variable_utils import InstrumentVariablesUtils
+from utils.status_utils import StatusUtils
+from utils.reduction_run_utils import ReductionRunUtils
+
+# sys.path.append('/home/isisautoreduce/NewQueueProcessing/QueueProcessor/utils')
+
 
 # Set up logging and attach the logging to the right part of the config.
 logging.config.dictConfig(LOGGING)

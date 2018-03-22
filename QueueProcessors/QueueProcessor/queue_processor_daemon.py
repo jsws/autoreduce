@@ -1,8 +1,9 @@
 #!/usr/bin/env python
  
 import sys
-from daemon import Daemon
 import queue_processor
+
+from daemon import Daemon
 
 
 class QueueProcessorDaemon(Daemon):
@@ -10,7 +11,8 @@ class QueueProcessorDaemon(Daemon):
         queue_processor.main()
         while True:
             pass
- 
+
+
 if __name__ == "__main__":
     daemon = QueueProcessorDaemon('/tmp/QueueProcessorDaemon.pid')
     if len(sys.argv) == 2:

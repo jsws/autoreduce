@@ -1,14 +1,17 @@
-import os
-import io
-import logging.config
+import cgi
 import chardet
 import imp
-import cgi
-from settings import REDUCTION_DIRECTORY, LOGGING
-from orm_mapping import *
-from variable_utils import VariableUtils
+import io
+import logging.config
+import os
+
+from QueueProcessors.QueueProcessor.base import session
+from QueueProcessors.QueueProcessor.orm_mapping import *
+from QueueProcessors.QueueProcessor.settings import REDUCTION_DIRECTORY, LOGGING
+
 from instrument_utils import InstrumentUtils
-from base import session
+from variable_utils import VariableUtils
+
 
 # Set up logging and attach the logging to the right part of the config.
 logging.config.dictConfig(LOGGING)

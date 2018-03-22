@@ -1,6 +1,7 @@
-from sqlalchemy.ext.declarative import declarative_base
 from settings import MYSQL
+
 from sqlalchemy import create_engine, MetaData
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()

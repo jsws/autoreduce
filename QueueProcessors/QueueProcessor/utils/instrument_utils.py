@@ -1,7 +1,9 @@
 import logging.config
-from settings import LOGGING
-from orm_mapping import *
-from base import session
+
+from QueueProcessors.QueueProcessor.base import session
+from QueueProcessors.QueueProcessor.orm_mapping import *
+from QueueProcessors.QueueProcessor.settings import LOGGING
+
 
 # Set up logging and attach the logging to the right part of the config.
 logging.config.dictConfig(LOGGING)

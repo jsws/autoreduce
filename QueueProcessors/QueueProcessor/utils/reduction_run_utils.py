@@ -1,12 +1,14 @@
-import logging.config
 import datetime
-from settings import LOGGING
-from orm_mapping import *
-from base import session
-from messaging_utils import MessagingUtils
+import logging.config
+
+from QueueProcessors.QueueProcessor.base import session
+from QueueProcessors.QueueProcessor.orm_mapping import *
+from QueueProcessors.QueueProcessor.settings import LOGGING
+
 from instrument_variable_utils import InstrumentVariablesUtils
-from variable_utils import VariableUtils
+from messaging_utils import MessagingUtils
 from status_utils import StatusUtils
+from variable_utils import VariableUtils
 
 # Set up logging and attach the logging to the right part of the config.
 logging.config.dictConfig(LOGGING)

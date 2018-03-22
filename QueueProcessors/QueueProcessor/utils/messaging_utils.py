@@ -1,8 +1,10 @@
-import logging.config
 import json
-from settings import LOGGING, ACTIVEMQ, FACILITY
-from orm_mapping import *
-from base import session
+import logging.config
+
+from QueueProcessors.QueueProcessor.base import session
+from QueueProcessors.QueueProcessor.orm_mapping import *
+from QueueProcessors.QueueProcessor.settings import LOGGING, ACTIVEMQ, FACILITY
+
 
 # Set up logging and attach the logging to the right part of the config.
 logging.config.dictConfig(LOGGING)
